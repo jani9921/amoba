@@ -95,7 +95,13 @@ function feluliras2(azonosito) {
 	}
 		kijelol(azonosito);
 		tele2();
+		uresMezok = document.querySelectorAll("td img") //uresmezok ertekenek adjuk, az üres td-ket, a queryselectorral ezeket kikeressük
+
+	if (uresMezok.length >=7) //megnezzuk a hosszat, ha 0 nincs tobb szabad td
+	{
 		gyozelem();
+
+	}
 }
 /**function tele() {
 	uresMezok = document.querySelectorAll("td:empty") //uresmezok ertekenek adjuk, az üres td-ket, a queryselectorral ezeket kikeressük
@@ -146,13 +152,22 @@ function gyozelem() {
 	var gyozelemJatekos2Sor = 0;
 	var gyozelemJatekos1Oszlop = 0;
 	var gyozelemJatekos2Oszlop = 0;
-	var jatekvege=4;
-	var gyozelemJatekos1_atlo1=0;
-	var gyozelemJatekos1_atlo2=0;
+	var	gyozelemJatekos1_atlo1=0;
+	var	gyozelemJatekos1_atlo2=0;
 	var gyozelemJatekos2_atlo1=0;
 	var gyozelemJatekos2_atlo2=0;
+	var jatekvege=4;
+
 	for (var i = 0; i < meret; i++) //sor vegigfutas
 	{
+		gyozelemJatekos1Sor = 0;
+		gyozelemJatekos2Sor = 0;
+		gyozelemJatekos1Oszlop = 0;
+		gyozelemJatekos2Oszlop = 0;
+		gyozelemJatekos1_atlo1=0;
+		gyozelemJatekos1_atlo2=0;
+		gyozelemJatekos2_atlo1=0;
+		gyozelemJatekos2_atlo2=0;
 		for(var j=0;j<meret;j++)// oszlop vegigfutas
 		{
 			var Sor = document.getElementById(i+'_'+j); //sor ertekenek adjuk az adott id-ju tablat
@@ -183,6 +198,15 @@ function gyozelem() {
 				gyozelemJatekos1Oszlop = 0;
 				gyozelemJatekos2Oszlop = 0;
 			}
+			if (!Sor || (Sor.innerHTML !== src1 && Sor.innerHTML !== src2)) {
+			gyozelemJatekos1Sor = 0;
+			gyozelemJatekos2Sor = 0;
+}
+
+			if (!Oszlop || (Oszlop.innerHTML !== src1 && Oszlop.innerHTML !== src2)) {
+				gyozelemJatekos1Oszlop = 0;
+				gyozelemJatekos2Oszlop = 0;
+}
 			if (gyozelemJatekos1Sor >= jatekvege || gyozelemJatekos1Oszlop >= jatekvege) // ha a jatekos eleri a vagy egyenlo vele 4-et ami a jatekvege akkor nyer az adott jatekos
 			{
 				
@@ -212,13 +236,37 @@ function gyozelem() {
 
 		}
 	}
-
+		gyozelemJatekos1Sor = 0;
+		gyozelemJatekos2Sor = 0;
+		gyozelemJatekos1Oszlop = 0;
+		gyozelemJatekos2Oszlop = 0;
+		gyozelemJatekos1_atlo1 = 0;
+        gyozelemJatekos2_atlo1 = 0;
+        gyozelemJatekos1_atlo2 = 0;
+        gyozelemJatekos2_atlo2 = 0;
 for (var l = 0; l < meret; l++)  //sor ciklus
 	{
+		gyozelemJatekos1Sor = 0;
+		gyozelemJatekos2Sor = 0;
+		gyozelemJatekos1Oszlop = 0;
+		gyozelemJatekos2Oszlop = 0;
+		gyozelemJatekos1_atlo1 = 0;
+        gyozelemJatekos2_atlo1 = 0;
+        gyozelemJatekos1_atlo2 = 0;
+        gyozelemJatekos2_atlo2 = 0;
+
         for (let m = 0; m < meret; m++) //oszlop ciklus
 		{
-            for (let n = 0; n < meret; n++)  //atlo ciklus
+            for (let n = 0; n < jatekvege; n++)  //atlo ciklus
 			{
+						gyozelemJatekos1Sor = 0;
+		gyozelemJatekos2Sor = 0;
+		gyozelemJatekos1Oszlop = 0;
+		gyozelemJatekos2Oszlop = 0;
+		gyozelemJatekos1_atlo1 = 0;
+        gyozelemJatekos2_atlo1 = 0;
+        gyozelemJatekos1_atlo2 = 0;
+        gyozelemJatekos2_atlo2 = 0;
                 var Atlo_1 = document.getElementById((l + n) + "_" + (m + n)); //jobbrol balra le atlo
                 var Atlo_2 = document.getElementById((l + n) + "_" + (m - n)); //balrol jobbra le atlo
 
