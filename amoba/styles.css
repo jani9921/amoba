@@ -1,0 +1,183 @@
+        .tabla_fejlec
+		{
+				border-collapse: collapse; /* Táblázat cellák közötti vonalak eltüntetése */
+    border-radius: 20px; /* Táblázat sarkainak lekerekítése */
+    overflow: hidden; /* A lekerekítés érvényesüléséhez */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Árnyék hozzáadása, hogy kiemelkedjen */
+	background: linear-gradient(to bottom right, #e6e5de, #a1a3a7);
+    font-family:  'Press Start 2P', cursive;/* A betűtípus beállítása */
+    font-size: 16px; /* Alap betűméret */
+    font-weight: normal; /* Normál vastagság */
+    line-height: 1.5; /* A sorok közötti távolság */ /* A szöveg színe */
+
+		}
+		.mytable {
+			   
+	border-collapse: collapse; /* Táblázat cellák közötti vonalak eltüntetése */
+    border-radius: 20px; /* Táblázat sarkainak lekerekítése */
+    overflow: hidden; /* A lekerekítés érvényesüléséhez */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Árnyék hozzáadása, hogy kiemelkedjen */
+	background: linear-gradient(to bottom right, #e6e5de, #a1a3a7);
+	    font-family: 'Press Start 2P', cursive; /* A betűtípus beállítása */
+    font-size: 16px; /* Alap betűméret */
+    font-weight: normal; /* Normál vastagság */
+    line-height: 1.5; 
+        }
+
+        .mytd {
+			    font-family: 'Press Start 2P', cursive; /* A betűtípus beállítása */
+    font-size: 16px; /* Alap betűméret */
+    font-weight: normal; /* Normál vastagság */
+    line-height: 1.5; 
+            color: white;
+            border: 3px solid #eceaed;
+            padding: 6px;
+            text-align: center;
+        }
+		.fejlec
+		{
+			{
+            color: white;
+            border: 3px solid #eceaed;
+            padding: 6px;
+            text-align: center;
+			text-shadow: 2px 2px 5px #888;
+			    font-family: 'Press Start 2P', cursive; /* A betűtípus beállítása */
+    font-size: 16px; /* Alap betűméret */
+    font-weight: normal; /* Normál vastagság */
+    line-height: 1.5; 
+        }
+		}
+		.mytd:hover {
+	background-color: rgba(255, 255, 255, 0.7);
+	    font-family: 'Press Start 2P', cursive; /* A betűtípus beállítása */
+    font-size: 16px; /* Alap betűméret */
+    font-weight: normal; /* Normál vastagság */
+    line-height: 1.5; 
+}
+		th
+		{
+			background-color: rgba(255, 255, 255, 0.7);
+		}
+		body {
+    
+	background:linear-gradient(to top left, #e6e5de, #a1a3a7);
+		}
+	
+
+input 
+{
+    border-radius: 6px; /* Lekerekített sarkok */
+    background-color:#aca9ac; /* Háttérszín */
+    padding: 3px; /* Belső térköz */
+    border: 1px solid #ccc; /* Szegély */
+	    font-family:'Press Start 2P', cursive;/* A betűtípus beállítása */
+    font-size: 16px; /* Alap betűméret */
+    font-weight: normal; /* Normál vastagság */
+    line-height: 1.5; 
+}
+
+/* Külön háttérszín beállítás a fókuszál input mezőhöz */
+input:focus {
+    background-color:#aca9ac; /* Fókuszált háttérszín */
+    outline: none; /* Eltüntetjük a fókusz vonalat */
+	    font-family: 'Press Start 2P', cursive; /* A betűtípus beállítása */
+    font-size: 16px; /* Alap betűméret */
+    font-weight: normal; /* Normál vastagság */
+    line-height: 1.5; 
+}
+.myButton 
+{
+    padding: 8px 10px;
+    font-size: 13px;
+    background-color:#aca9ac ; /* Alap háttérszín */
+    color: white;
+    border: 2px solid #e6e5de ;
+    border-radius: 3px;
+    cursor: pointer; /* Mutatja, hogy a gomb interaktív */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Zökkenőmentes átmenet */
+	margin-left:20px;
+	    font-family: 'Press Start 2P', cursive;
+    font-size: 16px; /* Alap betűméret */
+    font-weight: normal; /* Normál vastagság */
+    line-height: 1.5; 
+}
+
+.myButton:hover {
+    background-color: #a9a9ab; 
+    transform: scale(1.1);
+	    font-family: 'Press Start 2P', cursive;/* A betűtípus beállítása */
+    font-size: 16px; /* Alap betűméret */
+    font-weight: normal; /* Normál vastagság */
+    line-height: 1.5; 
+}
+h2
+{
+	    font-family: 'Press Start 2P', cursive; /* A betűtípus beállítása */ /* Alap betűméret */
+    font-weight: normal; /* Normál vastagság */
+    line-height: 1.5; 
+	font-size:40px;
+	color:#e6e5de;
+	text-shadow: 2px 2px 5px #888;
+}
+.home_page
+{
+	visibility:visible;
+	    font-family: 'Press Start 2P', cursive; /* A betűtípus beállítása */ /* Alap betűméret */
+    font-weight: normal; /* Normál vastagság */
+    line-height: 1.5; 
+	font-size:20px;
+	color:#e6e5de;
+	text-shadow: 2px 2px 5px #888;
+}
+.jatek_start
+{
+	visibility:hidden;
+}
+.jatek_megjelenit
+{
+	visibility:hidden;
+}
+.tabla_fejlec
+{
+	visibility:hidden;
+}
+.bevezeto
+{
+	visibility:visible;
+}	
+.myButton1
+{
+    padding: 20px 20px;
+    font-size: 13px;
+    background-color:#aca9ac ; /* Alap háttérszín */
+    color: white;
+    border: 2px solid #e6e5de ;
+    border-radius: 3px;
+    cursor: pointer; /* Mutatja, hogy a gomb interaktív */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Zökkenőmentes átmenet */
+	margin-top:20px;
+	    font-family: 'Press Start 2P', cursive;
+    font-size: 30px; /* Alap betűméret */
+    font-weight: normal; /* Normál vastagság */
+    line-height: 1.5; 
+}
+
+.myButton1:hover {
+    background-color: #a9a9ab; 
+    transform: scale(1.1);
+	    font-family: 'Press Start 2P', cursive;/* A betűtípus beállítása */
+    font-size: 40px; /* Alap betűméret */
+    font-weight: normal; /* Normál vastagság */
+    line-height: 1.5; 
+}
+.foglalt_mezo
+{
+				    font-family: 'Press Start 2P', cursive; /* A betűtípus beállítása */
+    font-size: 26px; /* Alap betűméret */
+    font-weight: normal;
+color:red;	/* Normál vastagság */
+    line-height: 1.5; 
+	visibility:hidden;
+	transition: opacity 0.5s ease-out, visibility 0s 0.5s;
+}

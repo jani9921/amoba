@@ -1,0 +1,158 @@
+var jatekos=1; //globális változó. Melyik játékos van soron
+var src;
+var mezo;
+var src2 = '<img src="kor.jpg" style="width:95%; height:95%;" >';
+var src1 = '<img src="x.png" style="width:75%; height:75%;" >'; //Az 1-es játékos szimbóluma az X
+//var meret;
+var uresMezok = document.querySelectorAll("td:empty")
+function megrajzol()
+{
+	var meret=document.getElementById("palya_meret").value; //Input mezőben megadott érték
+	var palya=''; //Pálya változó deklaráció
+	var szelesseg=100/Number(meret); //Kiszámoljuk hogy egy cella hány százalék széles legyen
+	for (var i=0;i<meret;i++) //Ciklus 1 a Tábla soraira, annyiszor fut le amekkora méretet állítottunk be
+	{
+		palya=palya+'<tr>'; //Új sor
+		for (var j=0;j<meret;j++) // Ciklus az adott soron belül az oszlopokra, annyiszor fut le amekkora méretet állítottunk be
+		{
+			palya=palya+'<td style="width:'+szelesseg+'%; height:'+szelesseg+'%;" id="'+i+'_'+j+'" onclick="feluliras2(this.id);"></td>'; // Új cella
+			// Méreteit a szelesseg változó alapján állítjuk be, onclick eseményre beállítjuk a kijelol függvényt
+		}
+		palya=palya+'</tr>'; //sor lezárása
+	} //ciklus vége
+	document.getElementById("amoba_palya").innerHTML=palya; // A dinamikusan összeállított pálya változót értékül adjuk az amoba_palya belsejének
+	
+	const contentString = "Játékos 1";
+
+	document.getElementById("jatekos_1").innerHTML = contentString.bold(); // Az 1-es játékost megvastagítjuk
+}
+
+function kijelol(azonosito) //azonosito ID-t paraméterül kapja
+{
+	//Változó deklaráció
+	if (jatekos == 1) // Ha jatekos globális változó értéke 1 volt
+	{
+
+		jatekos = 2; // Átállítja, hogy a következő körben a 2-es játékos jön
+		const contentString = "Játékos 2";
+		document.getElementById("jatekos_2").innerHTML = contentString.bold(); // A 2-es játékost megvastagítjuk
+		document.getElementById("jatekos_1").innerHTML = "Játékos 1"; //Az 1-es játékos szövege sima lesz
+		document.getElementById(azonosito).innerHTML = src1;
+	} else //Ellenkező esetben (2-es játékos)
+	{
+		src2 = '<img src="kor.jpg" style="width:95%; height:95%;" >';
+		jatekos = 1;
+		const contentString = "Játékos 1";
+		document.getElementById("jatekos_1").innerHTML = contentString.bold();
+		document.getElementById("jatekos_2").innerHTML = "Játékos 2";
+		document.getElementById(azonosito).innerHTML = src2;
+	}
+	 //Az adott ID-jú elembe (cellába) betesszük a képet
+
+}
+function feluliras(azonosito)
+{
+	mezo=document.getElementById(azonosito);
+	if(mezo.innerHTML.trim()!=="")
+	{
+		alert('ez a mezo mar foglalt, valassz masikat')
+		return;
+
+	}
+	else
+	kijelol(azonosito);
+	tele2();
+	gyozelem(azonosito);
+}
+function feluliras2(azonosito) {
+	var mezo2 = document.getElementById(azonosito);
+	if (mezo2 && mezo2.innerHTML == src1 ||mezo2 && mezo2.innerHTML == src2) {
+		alert('ez a mezo foglalt!')
+		return;
+	}
+	alert(mezo2);
+	kijelol(azonosito);
+	tele2();
+	gyozelem(azonosito);
+}
+function tele() {
+	uresMezok = document.querySelectorAll("td:empty")
+	alert(uresMezok.length)
+	if (uresMezok.length === 0)
+	{
+		alert("Betelt a pálya!");
+		alert(uresMezok.length)
+	}
+}
+function tele2()
+{
+		var meret=document.getElementById("palya_meret").value;
+		var osszesMezo=meret*meret;
+		var beteltmezo=0;
+
+	for (var i = 0; i < meret; i++) {
+		for (var j = 0; j < meret; j++) {
+			var mezo = document.getElementById(i + "_" + j);
+			if (mezo.innerHTML.trim() !== "") {
+				beteltmezo++;
+			}
+		}
+	}
+
+	if(osszesMezo==beteltmezo)
+	{
+		alert('betelt a palya')
+	}
+
+}
+function gyozelem(azonosito) {
+	var meret = document.getElementById("palya_meret").value;
+	var gyozelemJatekos1Sor = 0;
+	var gyozelemJatekos2Sor = 0;
+	var gyozelemJatekos1Oszlop = 0;
+	var gyozelemJatekos2Oszlop = 0;
+	var jatekvege=4;
+	for (var i = 0; i < meret; i++)
+	{
+		for(var j=0;j<meret;j++) {
+			var Sor = document.getElementById(i + "_" + j);
+			var Oszlop = document.getElementById(j + "_" + i);
+
+			if (mezoSor.innerHTML == src1) {
+
+				gyozelemJatekos1Sor++;
+				gyozelemJatekos2Sor=0;
+			}
+		else if (mezoSor.innerHTML === src2)
+		{
+				gyozelemJatekos2Sor++;
+				gyozelemJatekos1Sor = 0;
+			}
+			else {
+				gyozelemJatekos1Sor = 0;
+				gyozelemJatekos2Sor = 0;
+			}
+			if (Oszlop.innerHTML === src1) {
+				gyozelemJatekos1Oszlop++;
+				gyozelemJatekos2Oszlop = 0;
+			} else if (Oszlop.innerHTML === src2) {
+				gyozelemJatekos2Oszlop++;
+				gyozelemJatekos1Oszlop = 0;
+			} else {
+				gyozelemJatekos1Oszlop = 0;
+				gyozelemJatekos2Oszlop = 0;
+			}
+			if (gyozelemJatekos1Sor >= jatekvege || gyozelemJatekos1Oszlop >= jatekvege) {
+				alert("Jatek vege, Játékos1 nyert!");
+				return;
+			}
+			if (gyozelemJatekos2Sor >= jatekvege || gyozelemJatekos2Oszlop >= jatekvege) {
+				alert("Jatek vege, Játékos2 nyert!");
+				return;
+			}
+
+		}
+	}
+}
+
+

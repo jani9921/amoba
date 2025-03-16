@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <link rel="stylesheet" href="styles.css">
+    <title>Amőba</title>
+<div class=home_page>
+<h2>Tic-Tac-Toe</h2>
+<span class=bevezeto id=bevezeto1>A tic-tac-toe (ejtsd: tiktektó, ismertebb nevén ix-ox) kétszemélyes absztrakt stratégiai táblás játék, a gomoku játékcsalád egy széles körben ismert tagja, amit már az ókori Egyiptom területén is ismertek.A két játékos hagyományosan X és O alakú jelekkel (bábukkal) játszik.Az nyer, akinek sikerül egy vonalban 4 jelet elhelyeznie, vízszintes, függőleges vagy átlós irányban.</span>
+</div>
+</head>
+
+<body style="text-align:center; width:100%;">
+<div class=jatek_fejlec>
+<input id="startButton"type="button" class=myButton1 onclick="lathatosag();" value="Start">
+<table class=tabla_fejlec style="margin:auto; width:90%; border:none;">
+<tr>
+<td class=fejlec id="jatekos_1" style="color:red; width:50%; text-align:center; border:none;">Player 1</td>
+<td class=fejlec id="jatekos_2" style="color:green; width:50%; text-align:center; border:none;">Player 2</td>
+</tr>
+</table>
+</div>
+<div >
+<p id="foglalt_mezo" class=foglalt_mezo>Ez a mező foglalt!</p>
+</div>
+
+<div class=jatek_start>
+<p><input type="text" id="palya_meret" placeholder="Írd be a pálya méretét"><input type="button" class=myButton onclick="gombfunkcio();" value="Start"></p>
+</div>
+<div class=jatek_megjelenit>
+<table class=mytable id="amoba_palya" style="width:550px; height:550px; text-align:center; margin:auto;">
+
+</table>
+</div>
+</body>
+
+<script type="text/javascript" src="amoba.js"></script>
+</html>
